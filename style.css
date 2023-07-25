@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+/*KYA*/
+*, *::before , *::after {
+     /* KYA */
+    box-sizing: border-box;         
+    font-family: 'Orbitron', sans-serif;  /*sans-serif is used when orbiton is not available */
+    font-weight: normal;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(to right , #00AAFF , #00FF6C);          
+    /* right se left  */
+}
+
+.calculator-grid{
+    display: grid;
+    /* sab kuch horizontaly centre karne ke liye centre karne ke liye */
+    justify-content: center;
+    align-content: center;
+    /* calculator-grid 100%(viewport height) lega  */
+    min-height: 100vh;
+    grid-template-columns: repeat(4 , 100px);      /* 100px is breadth */
+
+    grid-template-rows: minmax(120px , auto) repeat(5 , 100px);     
+
+}
+/* selecting all the buttons */
+.calculator-grid > button {
+    cursor: pointer;            /* to get pointer when we hover*/
+    font-size: 2rem;
+    border:  white solid;
+    outline: none;
+    background-color: rgba(255, 255, 255, .75 );
+}
+.calculator-grid > button:hover{            /*Selecting all the buttons inside calculator-grid*/
+    background-color: rgba(255, 255, 255, .9 ); 
+}
+
+.span-two{
+    grid-column: span 2;
+}
+.output-screen{
+    /* 1st column se last column tak */
+    grid-column: 1/-1;
+    background-color: rgba(0,0,0,.75);              /* 75% is the opacity*/  
+    /*KYA*/
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    padding: 10px;
+    justify-content: space-around;
+    /*KYA*/
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.output-screen .previous-operand{
+    color: rgba(255, 255, 255, .75);        /*255 == white .75 is opacity*/
+    font-size: 1.5rem;
+
+}
+.output-screen .current-operand{
+    color: white;
+    font-size: 2.5rem;
+    
+}
